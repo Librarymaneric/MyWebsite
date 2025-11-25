@@ -2,10 +2,9 @@ const REPO_BASE_PATH = '/MyWebsite/';
 
 async function loadContent(url) {
     const contentArea = document.getElementById('content-area');
- /*   if (!contentArea) return;
+    if (!contentArea) return;
 
-    contentArea.innerHTML = '<p style="text-align: center; padding: 20px;">Loading...</p>';
-    */
+    contentArea.innerHTML = '<p id="loading">Loading...</p>';
 
     const fullPath = REPO_BASE_PATH + url;
 
@@ -31,7 +30,7 @@ async function loadContent(url) {
         // 5. Handle any errors (network failure, 404, etc.)
         console.error('Failed to load content:', e.message);
         contentArea.innerHTML = 
-            `<div style="color: red; padding: 20px; border: 1px solid #f8d7da; background-color: #f8d7da; text-align: center;">
+            `<div id="failedLoad">
                 <strong>Error:</strong> Could not load resource. Please check file path: ${url}
             </div>`;
     }
