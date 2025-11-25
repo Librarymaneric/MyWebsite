@@ -1,3 +1,6 @@
+const REPO_BASE_PATH = '/MyWebsite/';
+
+
 async function loadContent(url) {
     const contentArea = document.getElementById('content-area');
     if (!contentArea) return;
