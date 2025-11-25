@@ -1,12 +1,11 @@
 const REPO_BASE_PATH = '/MyWebsite/';
 
-
 async function loadContent(url) {
     const contentArea = document.getElementById('content-area');
-    if (!contentArea) return;
+ /*   if (!contentArea) return;
 
-    // Clear previous content and show loading message
     contentArea.innerHTML = '<p style="text-align: center; padding: 20px;">Loading...</p>';
+    */
 
     const fullPath = REPO_BASE_PATH + url;
 
