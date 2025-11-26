@@ -1,3 +1,4 @@
+// using this to ensure proper fetching from github
 const REPO_BASE_PATH = '/MyWebsite/';
 
 async function loadContent(url) {
@@ -9,29 +10,26 @@ async function loadContent(url) {
     const fullPath = REPO_BASE_PATH + url;
 
     try {
-        // 1. Fetch the content
+        // Fetch the content
         const response = await fetch(fullPath);
         
-        // 2. Check for successful HTTP status (e.g., not 404)
+        // Check for successful HTTP status (e.g., not 404)
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status} for ${fullPath}`);
         }
         
-        // 3. Get the raw text (the content fragment)
+        // Get the raw text from the other html files
         const htmlFragment = await response.text();
 
-        // 4. Inject the content
+        // putting the text into the content-area div
         contentArea.innerHTML = htmlFragment;
 
-        // Optional: Update the browser history/URL
-        window.history.pushState({}, '', `#${url.split('.')[0]}`);
-
     } catch (e) {
-        // 5. Handle any errors (network failure, 404, etc.)
+        // Handle any errors (network failure, 404, etc.)
         console.error('Failed to load content:', e.message);
         contentArea.innerHTML = 
             `<div id="failedLoad">
-                <strong>Error:</strong> Could not load resource. Please check file path: ${url}
+                <b>Error:</b> Could not load resource. Please check file path: ${url}
             </div>`;
     }
 }
