@@ -16,12 +16,12 @@
     width: 60%;
 }
 
-.salute h1{
+.salute-header-cell h1{
     text-align: center;
     color: #8b0000;
 }
 
-.salute ul{
+.salute-header-cell ul{
     text-align:right;
     color: white;
 }
