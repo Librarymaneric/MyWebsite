@@ -216,6 +216,12 @@ body {
     color: #8b0000;
 }
 
+#content-area a:hover {
+    background-color: black;
+    font-weight: bold;
+    color: white;
+}
+
 /*-- Form Styles --*/
 
 /* --- Forms (e.g., .iceForms) --- */
